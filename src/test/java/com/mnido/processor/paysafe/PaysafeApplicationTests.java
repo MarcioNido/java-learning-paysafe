@@ -29,13 +29,13 @@ public class PaysafeApplicationTests {
 	@Test
 	public void testVerification() {
 
-		CardPaymentsVerificationRequest request = new CardPaymentsVerificationRequest();
-		request.setDescription("This is a test transaction");
-		request.setCard(new Card("4111111111111111", new CardExpiry(10, 2021), "123"));
-		request.setCustomerIp("127.0.0.1");
-		request.setMerchantRefNum(UUID.randomUUID().toString());
-		request.setProfile(new Profile("Marcio", "Nido", "marcionido2@gmail.com" ));
-		request.setBillingDetails(new BillingDetails(
+		CardPaymentsVerificationRequest verificationRequest = new CardPaymentsVerificationRequest();
+		verificationRequest.setDescription("This is a test transaction");
+		verificationRequest.setCard(new Card("4111111111111111", new CardExpiry(10, 2021), "123"));
+		verificationRequest.setCustomerIp("127.0.0.1");
+		verificationRequest.setMerchantRefNum(UUID.randomUUID().toString());
+		verificationRequest.setProfile(new Profile("Marcio", "Nido", "marcionido2@gmail.com" ));
+		verificationRequest.setBillingDetails(new BillingDetails(
 				"40 High Park Avenue",
 				"Toronto",
 				"ON",
@@ -43,8 +43,7 @@ public class PaysafeApplicationTests {
 				"M6P2S1"
 		));
 
-
-		CardPaymentsVerificationResponse response = service.verification(request);
+		CardPaymentsVerificationResponse response = service.verification(verificationRequest);
 		System.out.println(response.toString());
 		assertEquals("COMPLETED", response.getStatus());
 	}
