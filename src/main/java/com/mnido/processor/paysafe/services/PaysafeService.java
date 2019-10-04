@@ -30,27 +30,11 @@ public class PaysafeService {
         return this.restTemplate.getForObject(url, CardPaymentsMonitorResponse.class);
     }
 
-    public CardPaymentsVerificationResponse verification()
+    public CardPaymentsVerificationResponse verification(CardPaymentsVerificationRequest request)
     {
         String url = String.format("%s/cardpayments/v1/accounts/%s/verifications", BASE_URL, ACCOUNT);
         HttpHeaders headers = new HttpHeaders();
         headers.add(HttpHeaders.AUTHORIZATION, String.format("Basic %s", API_KEY));
-
-        CardPaymentsVerificationRequest request = new CardPaymentsVerificationRequest();
-        request.setDescription("This is a test transaction");
-        request.setCard(new Card("4111111111111111", new CardExpiry(10, 2021), "123"));
-        request.setCustomerIp("127.0.0.1");
-        request.setMerchantRefNum(UUID.randomUUID().toString());
-        request.setProfile(new Profile("Marcio", "Nido", "marcionido2@gmail.com" ));
-        request.setBillingDetails(new BillingDetails(
-                "40 High Park Avenue",
-                "Toronto",
-                "ON",
-                "CA",
-                "M6P2S1"
-        ));
-
-
         HttpEntity<CardPaymentsVerificationRequest> httpRequest = new HttpEntity<>(request, headers);
 
         return this.restTemplate.postForObject(url, httpRequest, CardPaymentsVerificationResponse.class);

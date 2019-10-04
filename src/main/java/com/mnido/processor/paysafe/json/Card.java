@@ -53,4 +53,15 @@ public class Card {
     public void setCvv(String cvv) {
         this.cvv = cvv;
     }
+
+    @Override
+    public String toString() {
+        return "Card{" +
+                "cardNum='" + cardNum + '\'' +
+                ", cardExpiry=" + cardExpiry +
+                ", cvv='" + cvv + '\'' +
+                ", type='" + type + '\'' +
+                ", lastDigits='" + lastDigits + '\'' +
+                '}';
+    }
 }

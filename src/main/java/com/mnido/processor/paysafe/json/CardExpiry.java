@@ -25,4 +25,12 @@ public class CardExpiry {
     public void setYear(int year) {
         this.year = year;
     }
+
+    @Override
+    public String toString() {
+        return "CardExpiry{" +
+                "month=" + month +
+                ", year=" + year +
+                '}';
+    }
 }

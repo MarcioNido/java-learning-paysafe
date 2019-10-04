@@ -1,10 +1,11 @@
 package com.mnido.processor.paysafe.json;
 
+import java.util.Arrays;
 import java.util.Date;
 
 public class CardPaymentsVerificationResponse {
 
-//    private Link[] links;
+    private Link[] links;
     private String id;
     private String merchantRefNum;
     private Card card;
@@ -19,13 +20,33 @@ public class CardPaymentsVerificationResponse {
     private String cvvVerification;
     private String status;
 
-//    public Link[] getLinks() {
-//        return links;
-//    }
+    public Link[] getLinks() {
+        return links;
+    }
 
-//    public void setLinks(Link[] links) {
-//        this.links = links;
-//    }
+    public void setLinks(Link[] links) {
+        this.links = links;
+    }
+
+    @Override
+    public String toString() {
+        return "CardPaymentsVerificationResponse{" +
+                "links=" + Arrays.toString(links) +
+                ", id='" + id + '\'' +
+                ", merchantRefNum='" + merchantRefNum + '\'' +
+                ", card=" + card +
+                ", authCode='" + authCode + '\'' +
+                ", profile=" + profile +
+                ", billingDetails=" + billingDetails +
+                ", customerIp='" + customerIp + '\'' +
+                ", description='" + description + '\'' +
+                ", txnTime=" + txnTime +
+                ", currencyCode='" + currencyCode + '\'' +
+                ", avsResponse='" + avsResponse + '\'' +
+                ", cvvVerification='" + cvvVerification + '\'' +
+                ", status='" + status + '\'' +
+                '}';
+    }
 
     public String getId() {
         return id;
@@ -130,4 +151,5 @@ public class CardPaymentsVerificationResponse {
     public void setStatus(String status) {
         this.status = status;
     }
+
 }

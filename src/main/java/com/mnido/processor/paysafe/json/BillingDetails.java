@@ -55,4 +55,15 @@ public class BillingDetails {
     public void setZip(String zip) {
         this.zip = zip;
     }
+
+    @Override
+    public String toString() {
+        return "BillingDetails{" +
+                "street='" + street + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", country='" + country + '\'' +
+                ", zip='" + zip + '\'' +
+                '}';
+    }
 }

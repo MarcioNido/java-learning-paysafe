@@ -56,4 +56,16 @@ public class CardPaymentsVerificationRequest {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return "CardPaymentsVerificationRequest{" +
+                "merchantRefNum='" + merchantRefNum + '\'' +
+                ", card=" + card +
+                ", profile=" + profile +
+                ", customerIp='" + customerIp + '\'' +
+                ", description='" + description + '\'' +
+                ", billingDetails=" + billingDetails +
+                '}';
+    }
 }
