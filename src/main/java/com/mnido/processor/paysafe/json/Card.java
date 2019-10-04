@@ -5,8 +5,8 @@ public class Card {
     private String cardNum;
     private CardExpiry cardExpiry;
     private String cvv;
-//    private String type;
-//    private String lastDigits;
+    private String type;
+    private String lastDigits;
 
     public Card(String cardNum, CardExpiry cardExpiry, String cvv) {
         this.cardNum = cardNum;
@@ -14,21 +14,21 @@ public class Card {
         this.cvv = cvv;
     }
 
-//    public String getType() {
-//        return type;
-//    }
-//
-//    public void setType(String type) {
-//        this.type = type;
-//    }
-//
-//    public String getLastDigits() {
-//        return lastDigits;
-//    }
-//
-//    public void setLastDigits(String lastDigits) {
-//        this.lastDigits = lastDigits;
-//    }
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getLastDigits() {
+        return lastDigits;
+    }
+
+    public void setLastDigits(String lastDigits) {
+        this.lastDigits = lastDigits;
+    }
 
     public String getCardNum() {
         return cardNum;

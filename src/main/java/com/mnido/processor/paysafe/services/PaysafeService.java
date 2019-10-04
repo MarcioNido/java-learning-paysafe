@@ -16,7 +16,6 @@ public class PaysafeService {
     private static final String BASE_URL="https://api.test.paysafe.com";
     private static final String ACCOUNT="1001561260";
     private static final String API_KEY="dGVzdF9tYXJjaW9uaWRvMjpCLXFhMi0wLTVkOTJhOTRmLTAtMzAyZDAyMTUwMDgzNjFmZTMwY2EzNTI2N2VhZTQ5ZDNkMjUxNDg1MzUzZDdiMThmZDIwMjE0NDViNTRhOWNlZDhkOTc4NGI0NTA1N2Y0Mjg1NDE4MTNhZWIxZTgxYw==";
-    private static final String WRONG_API_KEY="blablabla";
 
     private RestTemplate restTemplate;
 
@@ -36,8 +35,6 @@ public class PaysafeService {
         String url = String.format("%s/cardpayments/v1/accounts/%s/verifications", BASE_URL, ACCOUNT);
         HttpHeaders headers = new HttpHeaders();
         headers.add(HttpHeaders.AUTHORIZATION, String.format("Basic %s", API_KEY));
-
-
 
         CardPaymentsVerificationRequest request = new CardPaymentsVerificationRequest();
         request.setDescription("This is a test transaction");
